@@ -16,12 +16,12 @@ public protocol APIManagerProtocol {
 }
 
 /// API request manager.
-struct APIManager: APIManagerProtocol {
+public struct APIManager: APIManagerProtocol {
     // MARK: - Stored properties
     private let urlSession: URLSession
 
     // MARK: - Init
-    init(urlSession: URLSession = .shared) {
+	public init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
     }
 
@@ -31,7 +31,7 @@ struct APIManager: APIManagerProtocol {
     ///   - accessToken: Secret access token.
 	/// - Throws: If something went wrong.
     /// - Returns: Tuple with data and response.
-    func perform(
+	public func perform(
 		_ request: RequestProtocol,
 		with accessToken: String? = nil
 	) async throws -> (Data, HTTPURLResponse) {

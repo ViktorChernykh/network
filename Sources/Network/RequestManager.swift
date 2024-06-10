@@ -27,7 +27,7 @@ public actor RequestManager: RequestManagerProtocol {
     let tokenManager: AccessTokenManagerProtocol
 
 	// MARK: - Init
-	init(
+	public init(
 		apiManager: APIManagerProtocol = APIManager(),
 		parser: DataParserProtocol = DataParser(),
 		tokenManager: AccessTokenManagerProtocol = AccessTokenManager.shared

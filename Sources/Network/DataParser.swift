@@ -13,18 +13,18 @@ public protocol DataParserProtocol {
 }
 
 /// Data decoder.
-struct DataParser: DataParserProtocol {
+public struct DataParser: DataParserProtocol {
     // MARK: - Stored properties
     private let jsonDecoder: JSONDecoder
 
     // MARK: - Init
-    init(jsonDecoder: JSONDecoder = JSONDecoder()) {
+	public init(jsonDecoder: JSONDecoder = JSONDecoder()) {
         self.jsonDecoder = jsonDecoder
         self.jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 		self.jsonDecoder.dateDecodingStrategy = .iso8601
     }
 
-    func decode<T: Decodable>(data: Data) throws -> T {
+	public func decode<T: Decodable>(data: Data) throws -> T {
         try jsonDecoder.decode(T.self, from: data)
     }
 }
