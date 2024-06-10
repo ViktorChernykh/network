@@ -29,7 +29,7 @@ final public class AccessTokenManager {
 	}
 	private static var instance: AccessTokenManager?
 
-	static func makeInstance(
+	public static func makeInstance(
 		keyChainManager: KeychainProtocol? = nil,
 		userServiceScheme: String,
 		userServiceHost: String,
