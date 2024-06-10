@@ -36,7 +36,7 @@ final public class AccessTokenManager {
 		keyLogin: String,
 		keyAccess: String,
 		keyUserId: String
-	) {
+	) -> AccessTokenManager {
 		if Self.instance == nil {
 			Self.instance = AccessTokenManager(
 				keyChainManager: keyChainManager,
@@ -47,6 +47,7 @@ final public class AccessTokenManager {
 				keyUserId: keyUserId
 			)
 		}
+		return instance!
 	}
 
 	// Thread safe queue
